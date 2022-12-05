@@ -1,0 +1,29 @@
+baseURL = 'https://blog.iamjannik.me/'
+languageCode = 'de-DE'
+title = 'Janniks Blog'
+
+theme = 'archie'
+
+paginate = 10
+[permalinks]
+  posts = '/:year/:slug/'
+
+copyright = '© Jannik'
+
+[params]
+mode = "toggle"
+
+[[menu.main]]
+name = "Alle Posts"
+url = "/posts"
+weight = 2
+
+[[menu.main]]
+name = "Über"
+url = "/about"
+weight = 3
+
+[[menu.main]]
+name = "Schlagworte"
+url = "/tags"
+weight = 4
