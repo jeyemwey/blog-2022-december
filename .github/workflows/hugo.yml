@@ -29,7 +29,7 @@ jobs:
           known_hosts: ${{ secrets.SSH_HOST_KEY }}
 
       - name: Deploy with rsync
-        run: rsync -avz ./public/ ${{ secrets.SSH_USER }}@iamjannik.me:/var/www/blog.iamjannik.me
+        run: rsync -vz ./public/ ${{ secrets.SSH_USER }}@iamjannik.me:/var/www/blog.iamjannik.me
 
       #- name: Deploy
       #  uses: peaceiris/actions-gh-pages@v3
