@@ -1,0 +1,55 @@
+{{/*% 
+  Shortcode für vollformatige Bilder. Import relative images with:
+
+  {{< picture "images/bla.jpg" "ALT-Text" >}}
+
+  If available, Exif-Data will be extracted, and the alt text is printed afterwards.
+  There is a check that throws if no alt text is given.
+
+  To wrap things up, there's an emdash which separates the caption from the rest of the article.
+
+  % */}}
+
+<style>
+  .imageWithCaption {
+    margin-bottom: 2em;
+    font-family: 'Fira Sans', sans-serif;
+    line-height: 1.5;
+  }
+  .imageWithCaption img {
+    border: 0;
+  }
+  .imageWithCaption::after {
+    display: block;
+    content: '⸻';
+  }
+</style>
+
+{{ if eq (len ($.Get 1)) 0 }}
+  {{ errorf "image %s does not have an alt text! Add one as the second parameter to the < picture > shortcode." (.Get 0) }}
+{{ end }}
+
+{{ $res := .Page.Resources.GetMatch (.Get 0) }}
+
+{{ if lt ($res.Width) 1600 }}
+  {{ errorf "image %s seems to be smaller than 800px@2x wide. This can lead to artefacts. Suggestion: Use the normal image tag or find a higher-resolution image." (.Get 0) }}
+{{ end }}
+
+{{ $res := $res.Resize "1600x" }}
+
+{{ with $res }}
+
+<section class="imageWithCaption">
+  <img src="{{ .RelPermalink }}" alt="{{ $.Get 1 }}" width="{{ .Width }}" />
+  <small aria-hidden="true">
+    {{ if .Exif }}
+      &#x1D453;/{{ .Exif.Tags.FNumber }},
+      ISO {{.Exif.Tags.ISOSpeedRatings}},
+      t={{ if (lt .Exif.Tags.ExposureTime  1) }}1/{{ math.Round (div 1 .Exif.Tags.ExposureTime) }}s,
+        {{ else }}
+          {{ div (math.Round (div .Exif.Tags.ExposureTime 5)) 5 }}s,
+        {{ end }}
+    {{ end }}
+    alt={{ $.Get 1 }}</small>
+</section>
+{{ end }}
