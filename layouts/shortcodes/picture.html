@@ -18,6 +18,10 @@
   }
   .imageWithCaption img {
     border: 0;
+    filter: blur(8px);
+  }
+  .imageWithCaption img.loaded {
+    filter: none;
   }
   .imageWithCaption::after {
     display: block;
@@ -29,18 +33,20 @@
   {{ errorf "image %s does not have an alt text! Add one as the second parameter to the < picture > shortcode." (.Get 0) }}
 {{ end }}
 
-{{ $res := .Page.Resources.GetMatch (.Get 0) }}
+{{ $input := .Page.Resources.GetMatch (.Get 0) }}
 
-{{ if lt ($res.Width) 1600 }}
+{{ if lt ($input.Width) 1600 }}
   {{ errorf "image %s seems to be smaller than 800px@2x wide. This can lead to artefacts. Suggestion: Use the normal image tag or find a higher-resolution image." (.Get 0) }}
 {{ end }}
 
-{{ $res := $res.Resize "1600x" }}
+{{ $res := $input.Resize "1600x" }}
+{{ $lqi := $res.Resize "200x" }}
+{{ $lqi := $lqi | images.Filter (images.GaussianBlur 20) (images.Brightness 20) }}
 
 {{ with $res }}
 
 <section class="imageWithCaption">
-  <img src="{{ .RelPermalink }}" alt="{{ $.Get 1 }}" width="{{ .Width }}" />
+  <img src="{{ $lqi.RelPermalink }}" data-hqi-src="{{ .RelPermalink }}" alt="{{ $.Get 1 }}" width="{{ .Width }}" />
   <small aria-hidden="true">
     {{ if .Exif }}
       &#x1D453;/{{ .Exif.Tags.FNumber }},
