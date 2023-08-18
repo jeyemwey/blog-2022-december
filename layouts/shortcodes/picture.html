@@ -45,10 +45,12 @@
     {{ if .Exif }}
       &#x1D453;/{{ .Exif.Tags.FNumber }},
       ISO {{.Exif.Tags.ISOSpeedRatings}},
-      t={{ if (lt .Exif.Tags.ExposureTime  1) }}1/{{ math.Round (div 1 .Exif.Tags.ExposureTime) }}s,
+      {{ if not ( eq (printf "%T" .Exif.Tags.ExposureTime) "*big.Rat" ) }}
+        t={{ if (lt .Exif.Tags.ExposureTime  1) }}1/{{ math.Round (div 1 .Exif.Tags.ExposureTime) }}s,
         {{ else }}
           {{ div (math.Round (div .Exif.Tags.ExposureTime 5)) 5 }}s,
         {{ end }}
+      {{ end }}
     {{ end }}
     alt={{ $.Get 1 }}</small>
 </section>
