@@ -10,7 +10,7 @@ Hier ist noch mein [Fediverse](https://chaos.social/@jannik)-Account, mein [Twit
 
 jannik at outlook com [🔐](https://blog.iamjannik.me/2017/pgp/)
 
-Das Avatar-Bild ist von [@DieJoylina](https://twitter.com/diejoylina), danke dafür!
+Das Avatar-Bild ist von [@DieJoylina](https://diejoylina.bsky.social), danke dafür!
 
 # Datenschutz
 
