@@ -1,4 +1,6 @@
 .hugo_build.lock
 .DS_Store
 resources/_gen/*
-public/
+public
+result
+.direnv
