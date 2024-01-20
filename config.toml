@@ -3,8 +3,6 @@ languageCode = 'de-DE'
 title = 'Janniks Blog'
 
 theme = 'archie'
-[author]
-  name = 'Jannik'
 
 paginate = 10
 [permalinks]
