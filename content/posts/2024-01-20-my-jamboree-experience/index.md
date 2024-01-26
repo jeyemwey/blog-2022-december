@@ -19,15 +19,9 @@ We had (up to) 47 units in our subcamp, so 1700 youths and 200 leaders.
 Besides me, there were two more German ISTs in the infrastructure division, and we were the base for four German Units.
 We also had a Korean–English translator from ROK Army who helped us and the Korean-speaking staff.
 
-This article is divided in six sections:
+This article is divided in seven sections:
 
-* [Sanitary conditions, Trash, Contractors, Safe from Harm](#sanitary-conditions-trash-contractors-safe-from-harm)
-* [Food Delivery for the Units](#food-delivery-for-the-units)
-* [Streets and Transport](#streets-and-transport)
-* [Medical Emergencies](#medical-emergencies)
-* [Psychological situation for the ISTs](#psychological-situation-for-the-ists)
-* [Conclusion](#conclusion)
-
+{{< toc >}}
 
 ## Sanitary conditions, Trash, Contractors, Safe from Harm
 

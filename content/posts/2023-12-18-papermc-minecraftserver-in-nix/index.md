@@ -2,7 +2,7 @@
 title:  "PaperMC-Minecraftserver in NixOS"
 description: Deklarative Blockspiele mit Nix
 date:   2023-12-18
-tags: [tech]
+tags: [tech, nixos]
 ---
 
 In diesem Posting möchte ich beschreiben, wie man einen Minecraftserver mit PaperMC und konfigurierbare Plugins auf NixOS installieren kann. Dazu nehme ich die Pakete `papermc` und `nginx` aus nixpkgs (Revision `bf744fe90419885eefced41b3e5ae442d732712d`, also unstable) und baue die Plugins über eigene Derivations.
@@ -11,11 +11,7 @@ Die Anleitung richtet sich an Anfänger von NixOS, da ich selbst viel über dies
 
 Die Anleitung hat fünf Teile, die aufeinander aufbauen:
 
-1. [Das Grundgerüst](#das-grundgerüst)
-2. [Whitelist und Operators](#whitelist-und-operators)
-3. [Metrics](#metrics)
-4. [Webkarten](#webkarten)
-5. [Fazit](#fazit)
+{{< toc >}}
 
 ## Das Grundgerüst
 Die Basis des Services ist eine `.nix` file, die über ein `imports = [ ./minecraft-server.nix ];` in die NixOS-Konfiguration inkludiert wird. Diese Files veröffentlichen eine Funktion, welche einen Teil einer Konfiguration zurückgibt. Den Anfang macht ein eigener systemd-Service, der den Server startet:

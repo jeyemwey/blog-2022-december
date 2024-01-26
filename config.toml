@@ -13,6 +13,11 @@ copyright = '© Jannik'
 [params]
 mode = "toggle"
 
+[markup]
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = true
+
 [[menu.main]]
 name = "Alle Posts"
 url = "/posts"
