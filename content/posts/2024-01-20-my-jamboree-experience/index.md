@@ -1,7 +1,7 @@
 ---
-title:  "My Jamboree Experience 2023"
+title: "My Jamboree Experience 2023"
 description: Notes from an IST in Subcamp Management
-date:   2024-01-20
+date: 2024-01-20
 tags: [scouts, english]
 ---
 
@@ -46,15 +46,16 @@ Since the two porter potties of our subcamp also needed water supply, we couldn'
 
 The cleaning troops came around super sparsely, before the president eightfolded (what the heck) the staff they were not there once, after day 7 for the staff (2023-08-04) they came around about once per day.
 However, they did not contribute to the cleanliness of the rooms: The mop for the floor was also used in the toilets and in the sinks and cleaned afterwards in the _drinking water_ fountains.
-The personnel  did not understand English or Korean, there was no communication possible with them.
+The personnel did not understand English or Korean, there was no communication possible with them.
 
 Basically none of the contractors (also: power, food delivery, etc.) spoke any English and when requested in Korean, all of them said that they did not do the Safe from Harm training.
-Every single day, contractors went into the shower tents and toilets of youths of both genders without knocking or acknowledging  the protocol.
+Every single day, contractors went into the shower tents and toilets of youths of both genders without knocking or acknowledging the protocol.
 The contractors also smoked in masses directly in front of the youths and in the facilities.
 When we asked them to stop, they did not show understanding.
 Since it happened so often, we could not inform the _Comprehensive Situation Room_ (CSR) about all occurrences.
 
 ## Food Delivery for the Units
+
 The subcamp staff worked together with the food delivery volunteers to deliver breakfast/lunch and dinner to the units.
 Our job here was to get the food crates out of the containers, sort them by unit and hand them out to the waiting kids.
 
@@ -140,7 +141,7 @@ Calling from the cell phone always created issues, and the daily fighter jet sho
 The Jamboree was extremely stressful and exhausting. I had very little free time, and the isolation in the subcamp, and the incredible number of tasks and issues everywhere meant that I was working all waking hours.
 
 Almost every day, we stood up at 3:45am for the breakfast delivery, worked physically for four hours (until all food issues had been resolved) and were then too late for the IST dining.
-Instead, we crackers, fruits, and candy carried us through the day.
+Instead, crackers, fruits, and candy carried us through the day.
 
 One day, I had a back-to-back shift from 3pm-to-10pm, next to a 4am-to-12pm morning run.
 In the morning shift however, I was the only one with experience with food delivery because I had to swap in for the Brit who had to leave.
