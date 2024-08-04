@@ -1,6 +1,6 @@
 ---
 title:  "Visualization of the WOSM Fee Categories"
-description: TBA
+description: How the worlds largest Scouting organization puts the world into four categories.
 date:   2024-08-04
 tags: [scouts, english]
 ---
