@@ -9,6 +9,7 @@ function setTheme(mode) {
         document.getElementById("dark-mode-toggle").innerHTML = "<i data-feather=\"moon\"></i>";
         feather.replace()
     }
+    window.initMermaid();
 }
 
 function toggleTheme() {

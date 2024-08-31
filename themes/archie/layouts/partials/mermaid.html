@@ -1,0 +1,12 @@
+<script type="application/javascript" src="/mermaid.js"></script>
+<script>
+    window.initMermaid = () => {
+        var config = {
+            startOnLoad: true,
+            theme: localStorage.getItem("theme-storage"),
+            align: "{{ if site.Params.mermaid.align }}{{ site.Params.mermaid.align }}{{ else }}center{{ end }}",
+        };
+        mermaid.initialize(config);
+    };
+    window.initMermaid();
+</script>
