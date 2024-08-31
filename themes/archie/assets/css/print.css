@@ -1,0 +1,117 @@
+@media print {
+    article .body {
+        column-count: 2;
+        column-gap: 1.5em;
+        orphans: 3;
+        widows: 3;
+    }
+
+    html {
+        font-family: "Fira Sans", sans-serif;
+        font-size: 1rem;
+    }
+
+    header nav {
+        display: none;
+    }
+
+    header div.main {
+        font-size: 2em;
+    }
+
+    article section.body {
+        padding-top: 1em;
+        border-top: 1px dotted grey;
+        margin-top: 1em;
+        padding-bottom: 1em;
+        border-bottom: 1px dotted grey;
+        margin-bottom: 1em;
+    }
+
+    article section.body p {
+        margin-top: 0;
+        text-indent: 15px;
+        margin-block-end: 0.3em;
+    }
+    article section.body blockquote {
+        border-left: 1px solid grey;
+        padding-left: 1em;
+        margin-left: 1em;
+
+        p {
+            text-indent: 0px !important;
+        }
+    }
+
+    article section.body iframe {
+        column-span: all;
+    }
+
+    article section.body iframe,
+    article section.body .imageWithCaption {
+        break-inside: avoid;
+
+        line-height: 1.2;
+
+        &.landscape {
+            column-span: all;
+        }
+
+        img {
+            margin-top: 2em;
+            width: 100%;
+        }
+    }
+
+    article section.body img {
+        width: 100%;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+        font-family: "Fira Sans", sans-serif;
+        line-height: 1.2;
+        font-size: 12pt;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: 1.2rem;
+        margin-top: 2em;
+        break-after: avoid;
+    }
+
+    h1::before {
+        color: var(--maincolor);
+        content: "# ";
+    }
+    h2::before {
+        color: var(--maincolor);
+        content: "## ";
+    }
+    h3::before {
+        color: var(--maincolor);
+        content: "### ";
+    }
+    h4::before {
+        color: var(--maincolor);
+        content: "#### ";
+    }
+    h5::before {
+        color: var(--maincolor);
+        content: "##### ";
+    }
+    h6::before {
+        color: var(--maincolor);
+        content: "###### ";
+    }
+    div.post-tags:before {
+        content: "Tags";
+    }
+}

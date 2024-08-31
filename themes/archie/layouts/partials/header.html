@@ -37,6 +37,9 @@
 	{{- else -}}
 	{{ $fontstyle := resources.Get "css/fonts.css" | fingerprint }}
         <link href="{{ $fontstyle.Permalink }}" rel="stylesheet">
+
+	{{ $printlayout := resources.Get "css/print.css" | fingerprint }}
+        <link href="{{ $printlayout.Permalink }}" rel="stylesheet">
 	{{ end }}
 
 	{{ $style := resources.Get "css/main.css" | fingerprint }}
@@ -46,7 +49,7 @@
 		{{ $darkstyle := resources.Get "css/dark.css" | fingerprint }}
 		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="{{ $darkstyle.Permalink }}" {{ if eq .Site.Params.mode "auto" }}media="(prefers-color-scheme: dark)"{{ end }} {{ if eq .Site.Params.mode "toggle" }}disabled{{ end }} />
 	{{ end }}
-	
+
 	<!-- Custom CSS style get applied last -->
 	{{- if isset .Site.Params "customcss" }}
 		{{ range .Site.Params.customCSS }}

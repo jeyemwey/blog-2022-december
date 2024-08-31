@@ -45,7 +45,7 @@
 
 {{ with $res }}
 
-<section class="imageWithCaption">
+<section class="imageWithCaption {{ if lt .Width .Height }}portrait{{ else }}landscape{{ end }}">
   <img src="{{ $lqi.RelPermalink }}" data-hqi-src="{{ .RelPermalink }}" alt="{{ $.Get 1 }}" width="{{ .Width }}" />
   <small aria-hidden="true">
     {{ if .Exif }}

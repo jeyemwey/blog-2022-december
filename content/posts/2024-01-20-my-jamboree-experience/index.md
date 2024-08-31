@@ -59,7 +59,7 @@ Since it happened so often, we could not inform the _Comprehensive Situation Roo
 The subcamp staff worked together with the food delivery volunteers to deliver breakfast/lunch and dinner to the units.
 Our job here was to get the food crates out of the containers, sort them by unit and hand them out to the waiting kids.
 
-{{< picture "food-crates.jpg" "8 &times; 47 crates of food stacked on pallets. Each unit receives four breakfast (white label) and four lunch (yellow label) crates. Image from 2023-08-02." >}}
+{{< picture "food-crates.jpg" "8×47 crates of food stacked on pallets. Each unit receives four breakfast (white label) and four lunch (yellow label) crates. Image from 2023-08-02." >}}
 
 Once the kids were gone, we had to rush to bring the rest of the food out of the blazing heat into the fridge container.
 That was of course, after we were cleared by our subcamp chiefs to use the fridge container although there was a lot of mold found in the fridges in the other subcamps.
