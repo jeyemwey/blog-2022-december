@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main # Set a branch that will trigger a deployment
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -29,11 +30,4 @@ jobs:
           known_hosts: ${{ secrets.SSH_HOST_KEY }}
 
       - name: Deploy with rsync
-        run: rsync -avz --no-p --omit-dir-times ./public/ ${{ secrets.SSH_USER }}@iamjannik.me:/var/www/blog.iamjannik.me
-
-      #- name: Deploy
-      #  uses: peaceiris/actions-gh-pages@v3
-      #  if: github.ref == 'refs/heads/main'
-      #  with:
-      #    github_token: ${{ secrets.GITHUB_TOKEN }}
-      #    publish_dir: ./public
+        run: rsync -avz --no-p --omit-dir-times ./public/ ${{ secrets.SSH_USER }}@klaus.ipv4.rocks:/var/lib/blog.iamjannik.me/share
