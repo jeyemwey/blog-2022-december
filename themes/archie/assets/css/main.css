@@ -131,6 +131,9 @@ pre code {
   padding: 0 1ch;
   word-wrap: break-word;
 }
+section.links {
+    display: none;
+}
 
 /* Header */
 header {
