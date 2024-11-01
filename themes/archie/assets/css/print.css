@@ -8,7 +8,7 @@
 
     html {
         font-family: "Fira Sans", sans-serif;
-        font-size: 1rem;
+        font-size: 12.5pt;
     }
 
     header nav {
@@ -26,51 +26,118 @@
         padding-bottom: 1em;
         border-bottom: 1px dotted grey;
         margin-bottom: 1em;
-    }
-
-    article section.body p {
-        margin-top: 0;
-        text-indent: 15px;
-        margin-block-end: 0.3em;
-    }
-    article section.body blockquote {
-        border-left: 1px solid grey;
-        padding-left: 1em;
-        margin-left: 1em;
-
         p {
-            text-indent: 0px !important;
+            margin-top: 0;
+            text-indent: 15px;
+            margin-block-end: 0.3em;
+
+            &:has(img) {
+                text-indent: 0;
+            }
         }
-    }
+        blockquote {
+            border-left: 1px solid grey;
+            padding-left: 1em;
+            margin-left: 1em;
 
-    article section.body iframe {
-        column-span: all;
-    }
+            p {
+                text-indent: 0px !important;
+            }
+        }
 
-    article section.body iframe,
-    article section.body .imageWithCaption {
-        break-inside: avoid;
+        pre {
+            white-space: pre-wrap;
+            font-size: 0.7em;
+            margin-block-end: 1.6em;
+            /* break-inside: avoid; */
+        }
 
-        line-height: 1.2;
-
-        &.landscape {
+        iframe {
             column-span: all;
         }
 
+        div.callout {
+            break-inside: avoid;
+            padding: 1em;
+            margin: 1em 0;
+
+            border: 1px solid gray;
+        }
+
+        iframe,
+        .imageWithCaption {
+            break-inside: avoid;
+
+            line-height: 1.2;
+
+            &.landscape {
+                column-span: all;
+            }
+
+            img {
+                margin-top: 2em;
+                width: 100%;
+            }
+        }
+
         img {
-            margin-top: 2em;
             width: 100%;
         }
     }
 
-    article section.body img {
-        width: 100%;
+    article section.body {
+        counter-reset: links;
+
+        a[href^="http://"],a[href^="https://"]
+        {
+            counter-increment: links;
+        }
+
+        a[href^="http://"]::after, a[href^="https://"]::after
+        {
+            content: " [" counter(links) "]";
+        }
+    }
+
+    section.links {
+        display: block;
+        .empty-state {
+            padding-left: 2em;
+            font-style: italic;
+        }
+
+        ol {
+            counter-reset: item;
+            margin-left: 0;
+            padding-left: 0.5em;
+
+            li {
+                display: block;
+                margin-bottom: 0.5em;
+                margin-left: 2em;
+
+                &::before {
+                    display: inline-block;
+                    counter-increment: item;
+                    width: 2em;
+                    margin-left: -2em;
+                    content: "[" counter(item) "]";
+                }
+
+                code {
+                    font-size: 0.8em;
+                }
+            }
+        }
     }
 
     h1,
     h2,
     h3,
-    p {
+    p,
+    div.callout,
+    ul,
+    ol {
         font-family: "Fira Sans", sans-serif;
         line-height: 1.2;
         font-size: 0.85em;
@@ -113,5 +180,68 @@
     }
     div.post-tags:before {
         content: "Tags";
+    }
+
+    .highlight {
+        background-color: transparent;
+
+        pre,
+        pre * {
+            background-color: transparent !important;
+            color: black !important;
+        }
+    }
+    .soc:hover {
+        color: black;
+    }
+    .draft-label {
+        color: var(--darkMaincolor);
+        background-color: blue;
+    }
+    .highlight pre code[class="language-javaScript"]::before,
+    .highlight pre code[class="language-js"]::before {
+        content: "js";
+        background: transparentf7df1e;
+        color: black;
+    }
+    .highlight pre code[class*="language-yml"]::before,
+    .highlight pre code[class*="language-yaml"]::before {
+        content: "yaml";
+        background: transparentf71e6a;
+        color: black;
+    }
+    .highlight pre code[class*="language-shell"]::before,
+    .highlight pre code[class*="language-bash"]::before,
+    .highlight pre code[class*="language-sh"]::before {
+        content: "shell";
+        background: transparent;
+        color: black;
+    }
+    .highlight pre code[class*="language-json"]::before {
+        content: "json";
+        background: transparent;
+        color: #black;
+    }
+    .highlight pre code[class*="language-python"]::before,
+    .highlight pre code[class*="language-py"]::before {
+        content: "py";
+        background: transparent;
+        color: black;
+    }
+    .highlight pre code[class*="language-css"]::before {
+        content: "css";
+        background: transparent;
+        color: black;
+    }
+    .highlight pre code[class*="language-go"]::before {
+        content: "Go";
+        background: transparent;
+        color: black;
+    }
+    .highlight pre code[class*="language-md"]::before,
+    .highlight pre code[class*="language-md"]::before {
+        content: "Markdown";
+        background: transparent;
+        color: black;
     }
 }

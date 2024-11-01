@@ -15,6 +15,33 @@
 			{{ .Content }}
 		</section>
 
+		<section class="links">
+		Links
+            <ol>
+            {{ if .Content -}}
+                {{ $.Scratch.Set "count" 0 }}
+
+                {{ $urls := findRE "<a href=\"[^\"|\\\"]*\"" .Content -}}
+                {{ range $url := $urls -}}
+
+                    {{ $url := (strings.TrimPrefix "<a href=\"" $url) -}}
+                    {{ $url := strings.TrimSuffix "\"" $url -}}
+                    {{ if or (or (strings.HasPrefix $url "#" ) (strings.Contains $url "#fn:")) (strings.Contains $url "#fnref") }}
+                    {{ else }}
+                        {{ $.Scratch.Add "count" 1 }}
+
+                        <li><code>{{ $url }}</code></li>
+                    {{ end }}
+                {{ end -}}
+
+            {{ end -}}
+			</ol>
+
+			{{ if eq 0 ($.Scratch.Get "count") }}
+                <span class="empty-state">(none)</span>
+            {{ end }}
+		</section>
+
 		<div class="post-tags">
 			{{ if ne .Type "page" }}
 			{{ if gt .Params.tags 0 }}

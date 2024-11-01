@@ -91,6 +91,10 @@ a:hover {
   color: black;
 }
 
+img[src*="excalidraw"] {
+  filter: invert(1);
+}
+
 .site-title a {
   color: white;
   text-decoration: none !important;
