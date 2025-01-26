@@ -91,7 +91,7 @@ a:hover {
   color: black;
 }
 
-img[src*="excalidraw"] {
+img[src*="excalidraw"], img[src*="invertable"] {
   filter: invert(1);
 }
 
