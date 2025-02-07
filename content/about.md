@@ -6,14 +6,15 @@ title: About
 
 Hej, ich bin Jannik 👋
 
-Hier ist noch mein [Fediverse](https://chaos.social/@jannik)-Account, mein [Twitter](https://twitter.com/confuzd_)-Profil und mein [GitHub](https://github.com/jeyemwey)-Account.
+Hier ist noch mein [Fediverse](https://chaos.social/@jannik)-Account und mein [GitHub](https://github.com/jeyemwey)-Account.
 
-jannik at outlook com [🔐](https://blog.iamjannik.me/2017/pgp/)
+Per Email bin ich über jannik at outlook com [🔐](https://blog.iamjannik.me/2017/pgp/) erreichbar.
 
 Das Avatar-Bild ist von [@DieJoylina](https://diejoylina.bsky.social), danke dafür!
 
 # Datenschutz
 
-Seit dem 7. Mai 2018 läd diese Webseite keine Drittquellen mehr.
 Alle Aufrufe zu diesem Server sind HTTPS-verschlüsselt.
-Die Webseite wird über GitHub Pages gehostet.
+
+Es gibt ein Access Log mit einer Woche Retention-Period.
+Dieses speichert technische Informationen die User Agents und die Request-URLs, jedoch keine PII wie IP-Adressen.
