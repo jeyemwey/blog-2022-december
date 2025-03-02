@@ -1,0 +1,63 @@
+{{ define "main" }}
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">{{ .Params.podcast }}: {{ .Title }}</h1>
+			<div class="meta">Posted on {{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</div>
+		</div>
+		{{ if isset .Params "tldr" }}
+		<div class="tldr">
+			<strong>tl;dr:</strong>
+			{{ .Params.tldr }}
+		</div>{{ end }}
+
+		<section class="body">
+    	   	<p><a href="{{ .Params.link }}" target="_blank">[Link zum Podcast!]</a></p>
+
+
+		    {{ .Content }}
+		</section>
+
+		<section class="links">
+		Links
+            <ol>
+            {{ if .Content -}}
+                {{ $.Scratch.Set "count" 0 }}
+
+                {{ $urls := findRE "<a href=\"[^\"|\\\"]*\"" .Content -}}
+                {{ range $url := $urls -}}
+
+                    {{ $url := (strings.TrimPrefix "<a href=\"" $url) -}}
+                    {{ $url := strings.TrimSuffix "\"" $url -}}
+                    {{ if or (or (strings.HasPrefix $url "#" ) (strings.Contains $url "#fn:")) (strings.Contains $url "#fnref") }}
+                    {{ else }}
+                        {{ $.Scratch.Add "count" 1 }}
+
+                        <li><code>{{ $url }}</code></li>
+                    {{ end }}
+                {{ end -}}
+
+            {{ end -}}
+			</ol>
+
+			{{ if eq 0 ($.Scratch.Get "count") }}
+                <span class="empty-state">(none)</span>
+            {{ end }}
+		</section>
+
+		<div class="post-tags">
+			{{ if ne .Type "page" }}
+			{{ if gt .Params.tags 0 }}
+			<nav class="nav tags">
+				<ul class="tags">
+					{{ range .Params.tags }}
+					<li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+					{{ end }}
+				</ul>
+			</nav>
+			{{ end }}
+			{{ end }}
+		</div>
+	</article>
+</main>
+{{ end }}

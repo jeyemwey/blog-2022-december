@@ -1,0 +1,78 @@
+{{ define "main" }}
+
+<h1 class="page-title">Podcastarchiv</h1>
+
+<style>
+    aside {
+        width: 100%;
+        max-width: 57ch;
+        padding-left: 4ch;
+
+        font-style: italic;
+    }
+
+    ul.posts li {
+        p {
+            display: block;
+            width: auto;
+        }
+    }
+
+    h6.podcast-name {
+        font: inherit;
+        font-style: italic;
+        text-transform: uppercase;
+        font-size: 0.8em;
+
+        &:hover,
+        &:focus {
+            font-style: normal;
+        }
+
+        margin-bottom: 0;
+
+        &:before {
+            content: none;
+        }
+    }
+</style>
+
+<aside>
+    <p>
+        Ich höre sehr gerne, und sehr viele Podcasts. Haupt&shy;säch&shy;lich zu
+        eher speziellen Technologien, und wie Technologie auf die
+        Ge&shy;sell&shy;schaft ein&shy;wirkt. Aber auch Laberpodcasts, Queer-
+        und Diversity-Themen und Kulturkrams sind dabei.
+    </p>
+    <p>
+        Auf dieser Seite möchte ich tolle Folgen teilen, die mir gefallen haben
+        oder mich inspiriert haben. :). Die Podcastfolgen sind in der Regel auf
+        deutsch oder englisch, ich verlinke auf die ""offizielle"" Seite der
+        Podcastfolge mit den Shownotes und dem Webplayer zu der Folge.
+    </p>
+    <p>
+        Es gibt noch eine
+        <a href="{{ ref . "/posts/2025-03-02-podcastarchiv.md" }}"
+            >Bedienungsanleitung zur Nutzung dieser Seite</a
+        >
+        im Hauptblog.
+    </p>
+</aside>
+
+<ul class="posts">
+    {{- range .Data.Pages -}} {{- if (not (in (.Site.Params.excludedTypes |
+    default (slice "page")) .Type)) -}}
+    <li class="post">
+        <section>
+            <h6 class="podcast-name">{{ .Params.podcast }}</h6>
+            <a href="{{ .Params.link }}" target="_blank">{{.Title}} &#x2192;</a>
+            <span class="meta"
+                >{{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }}
+                <span class="draft-label">DRAFT</span> {{ end }}</span
+            >
+            {{.Content}}
+        </section>
+    </li>
+    {{- end -}} {{- end -}}
+</ul>
+{{ end }}

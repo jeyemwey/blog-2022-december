@@ -19,6 +19,11 @@ mode = "toggle"
     ordered = true
 
 [[menu.main]]
+name = "Podcastarchiv"
+url = "/podcasts"
+weight= 1
+
+[[menu.main]]
 name = "Alle Posts"
 url = "/posts"
 weight = 2
