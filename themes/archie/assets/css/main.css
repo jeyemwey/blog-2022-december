@@ -354,3 +354,30 @@ table td {
     padding: 6px 13px;
     border: 1px solid #dfe2e5;
 }
+
+.imageWithCaption {
+    margin-bottom: 2em;
+    font-family: "Fira Sans", sans-serif;
+    line-height: 1.5;
+}
+.imageWithCaption img {
+    border: 0;
+    filter: blur(8px);
+
+    max-width: calc(100% + 8rem);
+    margin-left: -4rem;
+}
+.imageWithCaption img.loaded {
+    filter: none;
+}
+.imageWithCaption::after {
+    display: block;
+    content: "⸻";
+}
+
+@media (max-width: 920px) {
+    .imageWithCaption img {
+        max-width: 100%;
+        margin-left: 0rem;
+    }
+}

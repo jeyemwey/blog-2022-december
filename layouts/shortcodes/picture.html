@@ -10,28 +10,6 @@
 
   % */}}
 
-<style>
-  .imageWithCaption {
-    margin-bottom: 2em;
-    font-family: 'Fira Sans', sans-serif;
-    line-height: 1.5;
-  }
-  .imageWithCaption img {
-    border: 0;
-    filter: blur(8px);
-
-    max-width: calc(100% + 8rem);
-    margin-left: -4rem;
-  }
-  .imageWithCaption img.loaded {
-    filter: none;
-  }
-  .imageWithCaption::after {
-    display: block;
-    content: '⸻';
-  }
-</style>
-
 {{ if eq (len ($.Get 1)) 0 }}
   {{ errorf "image %s does not have an alt text! Add one as the second parameter to the < picture > shortcode." (.Get 0) }}
 {{ end }}
