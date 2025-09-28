@@ -15,7 +15,7 @@ Vom Bahnhof Dammtor kommend wird man erstmal vom Haupteingang erschlagen, über 
 
 {{< picture "entrance-radisson.jpg" "Eingang vom CCH mit Spotlights, die teilweise rauszeigen. Auf dem Besucherinformationsdisplay steht \"Loading Chaos Engine\"." >}}
 
-Kommen wir zum dreifachen Disco-Donut, für den ich mich bestimmt fünf Mal in die Kiste Halle gesetzt habe um ihn zu beobachten. 😍 
+Kommen wir zum dreifachen Disco-Donut, für den ich mich bestimmt fünf Mal in die große Halle gesetzt habe, um ihn zu beobachten. 😍 
 
 {{< picture "disco-escalators.jpg" "Der Triple-Disco-Donut mit hunderten Strahlen und der Rolltreppe im Hintergrund. Auf einem Plakat steht All Creatures Welcome." >}}
 
